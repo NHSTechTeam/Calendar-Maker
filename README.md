@@ -1,11 +1,11 @@
 # Calendar-Maker
 NHS Calendar Maker
 
-Creative Commons Attribution 3.0 Unported
-http://creativecommons.org/licenses/by/3.0/
-
 License:
 --------
+
+Creative Commons Attribution 3.0 Unported
+http://creativecommons.org/licenses/by/3.0/
 
 THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS CREATIVE COMMONS PUBLIC LICENSE ("CCPL" OR "LICENSE"). THE WORK IS PROTECTED BY COPYRIGHT AND/OR OTHER APPLICABLE LAW. ANY USE OF THE WORK OTHER THAN AS AUTHORIZED UNDER THIS LICENSE OR COPYRIGHT LAW IS PROHIBITED.
 
