@@ -1623,11 +1623,11 @@
 	}
 
 	body {
-		background-color: #2A00FF;
-		background-image: url("images/overlay.png"), -moz-linear-gradient(45deg, #1115E4 15%, #FAFF3E 85%);
-		background-image: url("images/overlay.png"), -webkit-linear-gradient(45deg, #1115E4 15%, #FAFF3E 85%);
-		background-image: url("images/overlay.png"), -ms-linear-gradient(45deg, #1115E4 15%, #FAFF3E 85%);
-		background-image: url("images/overlay.png"), linear-gradient(45deg, #1115E4 15%, #FAFF3E 85%);
+		background-color: #FFF247;
+		background-image: url("images/overlay.png"), -moz-linear-gradient(45deg, #75D2FF 15%, #3A7BFF 85%);
+		background-image: url("images/overlay.png"), -webkit-linear-gradient(45deg, #75D2FF 15%, #3A7BFF 85%);
+		background-image: url("images/overlay.png"), -ms-linear-gradient(45deg, #75D2FF 15%, #3A7BFF 85%);
+		background-image: url("images/overlay.png"), linear-gradient(45deg, #75D2FF 15%, #3A7BFF 85%);
 	}
 
 		body.is-loading *, body.is-loading *:before, body.is-loading *:after {
