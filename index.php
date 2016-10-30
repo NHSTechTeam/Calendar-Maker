@@ -88,7 +88,8 @@ if (isset($_POST['submitschedule'])){
 This is the only section that needs to be edited for the program to work. You simply need to list out all the special day IDs. So anything that isn't A,B,C,D...
 
 */
-	$special_days = array("AS","BS","CS","DS","ES","FS","GS","HS","S","SS","M1","M2","M3","M4","Y1","Y2","Y3","Y4","EAA","EAB","EAC","EAD","EAE","EAF","EAG","EAH","APLC","BPLC","CPLC","DPLC","EPLC","FPLC","GPLC","HPLC","ATD","HTD","BTD","DTD");
+	$special_days = array("AS","BS","CS","DS","ES","FS","GS","HS","S","SS","M1","M2","M3","M4","Y1","Y2","Y3","Y4",
+	"EAA","EAB","EAC","EAD","EAE","EAF","EAG","EAH","APL","BPL","CPL","DPL","EPL","FPL","GPL","HPL","ATD","HTD","BTD","DTD");
 
 	//Stop editing
 	$export_text = "";
