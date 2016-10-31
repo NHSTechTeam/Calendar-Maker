@@ -1,6 +1,33 @@
 # Calendar-Maker
 NHS Calendar Maker
 
+Database Setup:
+--------
+### Early Dismissal
+##### Type 1
+All early dismissal days are simply the same as normal days, but marked with a 1 instead of a 0
+- Examples: A, B, C, D, E, F, G, H.
+
+### Two Hour Delays
+##### Type 2
+All Two Hour Delay days should be labeled in the format [_Letter Day_]TD
+- Examples: ATD, BTD, CTD, DTD, ETD, FTD, GTD, HTD.
+
+### PLC Days
+##### Type 2
+All PLC days should be labeled in the format [_Letter Day_]PL
+- Examples: APL, BPL, CPL, DPL, EPL, FPL, GPL, HPL.
+
+### Midterms
+##### Type 3
+All Midterms should be labeled in the format M[_Day 1-4_]
+- Examples: M1, M2, M3, M4.
+
+### Finals
+##### Type 3
+All Finals should be labeled in the format Y[_Day 1-4_]
+- Examples: Y1, Y2, Y3, Y4.
+
 License:
 --------
 
