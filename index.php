@@ -319,7 +319,7 @@ This is the only section that needs to be edited for the program to work. You si
 
 					<!-- Footer -->
 					<footer id="footer">
-						<p class="copyright">&copy; 2014-2016 <a href="http://nhstech.us/">Newtown
+						<p class="copyright">&copy; 2014-<?php echo date("Y") ?> <a href="http://nhstech.us/">Newtown
 							High School Technology Team</a>
 						</br>
 						Design: <a href="https://github.com/devinmatte">Devin Matte</a>  -  Initial Design: <a href="https://twitter.com/charlesdumais">Charles Dumais</a>
