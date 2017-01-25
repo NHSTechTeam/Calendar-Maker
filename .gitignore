@@ -46,3 +46,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 *.xml
+
+#App Specific Ignored Files
+include/configuration.php
