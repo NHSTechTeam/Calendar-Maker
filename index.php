@@ -128,7 +128,7 @@ This is the only section that needs to be edited for the program to work. You si
 		}
 	}
 	//write to file
-	$calfile = fopen("calendar.csv","w");
+	$calfile = fopen("calendar" . time() . ".csv","w");
 	fwrite($calfile, $export_text);
 	fclose($calfile);
 
