@@ -127,8 +127,8 @@ This is the only section that needs to be edited for the program to work. You si
 			}
 		}
 	}
-	//write to file
-	$filename = "calendar" . time() . ".csv";
+	//write to file as "calendar-unixTimecode.csv"
+	$filename = "exported/calendar-" . time() . ".csv";
 	$calfile = fopen($filename,"w");
 	fwrite($calfile, $export_text);
 	fclose($calfile);
