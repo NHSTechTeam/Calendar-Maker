@@ -128,7 +128,8 @@ This is the only section that needs to be edited for the program to work. You si
 		}
 	}
 	//write to file
-	$calfile = fopen("calendar" . time() . ".csv","w");
+	$filename = "calendar" . time() . ".csv";
+	$calfile = fopen($filename,"w");
 	fwrite($calfile, $export_text);
 	fclose($calfile);
 
@@ -146,7 +147,7 @@ This is the only section that needs to be edited for the program to work. You si
 											<h2>Thanks for using the Newtown High School Calendar Generator</h2>
 										</header>
                                         <ul class="actions">
-											<li><a href="http://nhstech.us/calendar/calendar.csv" class="button special icon fa-download">Download File</a></li>
+											<li><a href="http://nhstech.us/calendar/<?$filename?>" class="button special icon fa-download">Download File</a></li>
 										</ul>
                                         </br></br>
 
