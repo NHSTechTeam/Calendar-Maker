@@ -243,9 +243,9 @@ if (isset($_POST['submitschedule'])){
         <section id="cta" class="main special">
             <form name="schedule" id="schedule" action=<?php echo $_SERVER['PHP_SELF'] ?> method="post">
                 <div class="row uniform">
-                    <div class="6u 12u$(small)">Start Date: <input type=date name='startdate' id='startdate' size=50%
+                    <div class="6u 12u$(small)">Start Date: <input type=text name='startdate' id='startdate' size=50%
                                                                    value='2016-08-25' tabindex=1></div>
-                    <div class="6u$ 12u$(small)">End Date: <input type=date name='enddate' id='enddate' size=50%
+                    <div class="6u$ 12u$(small)">End Date: <input type=text name='enddate' id='enddate' size=50%
                                                                   value='2017-06-30' tabindex=2></div>
                 </div>
                 </br>
