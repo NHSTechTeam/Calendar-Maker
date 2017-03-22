@@ -154,14 +154,41 @@ mysql_select_db(CONF_DATABASE) or die("poop");
 
     <script>
 
+        <?php
+        echo "var phpjson = " . $json . ";\n";
+        ?>
+
+        var json = [];
+        for (var i = 1; i < phpjson.length; i++) {
+            var title = phpjson[i][0];
+            var start_date = phpjson[i][1];
+            var start_time = phpjson[i][2];
+            var end_date = phpjson[i][3];
+            var end_time = phpjson[i][4];
+            json.push({
+                title: title,
+                start: start_date + "T" + start_time,
+                end: end_date + "T" + end_time
+            })
+        }
+
         $(document).ready(function () {
 
             $('#calendar').fullCalendar({
                 defaultView: 'agendaWeek',
+                businessHours: {
+                    start: '07:15:00',
+                    end: '14:02:00',
+                    dow: [1, 2, 3, 4, 5]
+                },
+                minTime: '07:00:00',
+                maxTime: '14:15:00',
                 editable: false,
                 aspectRatio: 1.0,
-                height: 700,
-                weekends: false // will hide Saturdays and Sundays
+                height: "auto",
+                weekends: false,
+                allDaySlot: false,
+                events: json
             })
 
         });
@@ -186,7 +213,7 @@ mysql_select_db(CONF_DATABASE) or die("poop");
                         <li><a href="http://nhstech.us/calendar/<?php echo $filename; ?>"
                                class="button special icon fa-download">Download File</a></li>
                     </ul>
-                    <!-- <div id="calendar"></div> -->
+                    <div class="major" id="calendar"></div>
                     </br></br>
 
                     And here are instructions for creating a new calendar in Gmail and importing the CSV file:
@@ -410,8 +437,8 @@ mysql_select_db(CONF_DATABASE) or die("poop");
             CSS Template: <a href="https://html5up.net">HTML5 UP</a>
             </br>
             <a href="https://github.com/NHSTechTeam/Calendar-Maker" class="icon fa-github"><span
-                        class="label">GitHub</span></a></
-        </ul>
+                        class="label">GitHub</span></a>
+            </ul>
         </p>
     </footer>
 

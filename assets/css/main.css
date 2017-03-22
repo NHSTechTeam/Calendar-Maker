@@ -1815,11 +1815,11 @@
 		}
 
 	table th {
-		color: #ffffff;
+		color: #636363;
 	}
 
 	table thead {
-		border-bottom-color: rgba(255, 255, 255, 0.35);
+		border-bottom-color: rgba(99, 99, 99, 0.35);
 	}
 
 	table tfoot {
