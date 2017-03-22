@@ -181,13 +181,12 @@ mysql_select_db(CONF_DATABASE) or die("poop");
                 <div class="content">
                     <header class="major">
                         <h2>Thanks for using the Newtown High School Calendar Generator</h2>
-                        <p><?php echo $json?></p>
                     </header>
                     <ul class="actions">
                         <li><a href="http://nhstech.us/calendar/<?php echo $filename; ?>"
                                class="button special icon fa-download">Download File</a></li>
                     </ul>
-                    <div id="calendar"></div>
+                    <!-- <div id="calendar"></div> -->
                     </br></br>
 
                     And here are instructions for creating a new calendar in Gmail and importing the CSV file:
