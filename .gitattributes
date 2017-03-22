@@ -15,3 +15,11 @@
 *.PDF	 diff=astextplain
 *.rtf	 diff=astextplain
 *.RTF	 diff=astextplain
+
+# Vendor Folders
+assets/fullcalendar/* linguist-vendored
+assets/css/* linguist-vendored
+assets/sass/* linguist-vendored
+assets/fonts/* linguist-vendored
+assets/js/* linguist-vendored
+assets/css/main.css linguist-vendored=false
