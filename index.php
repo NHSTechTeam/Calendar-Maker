@@ -35,16 +35,32 @@ mysql_select_db(CONF_DATABASE) or die("poop");
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="favicon/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <!--[if lte IE 8]>
+    <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
     <link rel="stylesheet" href="assets/css/main.css"/>
-    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
+    <!-- Scripts -->
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <!--[if lte IE 8]>
+    <script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src="assets/js/main.js"></script>
+
+    <script src="assets/fullcalendar/lib/jquery.min.js"></script>
+    <link rel='stylesheet' href='assets/fullcalendar/fullcalendar.css'/>
+    <script src='assets/fullcalendar/lib/moment.min.js'></script>
+    <script src='assets/fullcalendar/fullcalendar.js'></script>
     <script type="text/javascript">
         <!--
         function SetAllCheckBoxes(FormName, FieldName, CheckValue) {
@@ -63,11 +79,9 @@ mysql_select_db(CONF_DATABASE) or die("poop");
         }
         // -->
     </script>
-</head>
-<body>
-<?
+    <?
 
-if (isset($_POST['submitschedule'])){
+    if (isset($_POST['submitschedule'])){
     //let's record the access information
     //log access
     $ip = $_SERVER['REMOTE_ADDR'];
@@ -132,50 +146,78 @@ if (isset($_POST['submitschedule'])){
     $calfile = fopen($filename, "w");
     fwrite($calfile, $export_text);
     fclose($calfile);
+    $csv = file_get_contents($filename);
+    $array = array_map("str_getcsv", explode("\n", $csv));
+    $json = json_encode($array);
 
     ?>
-    <div id="wrapper">
 
-        <!-- Main -->
-        <div id="main">
+    <script>
 
-            <!-- Introduction -->
-            <section id="intro" class="main">
-                <div class="spotlight">
-                    <div class="content">
-                        <header class="major">
-                            <h2>Thanks for using the Newtown High School Calendar Generator</h2>
-                        </header>
-                        <ul class="actions">
-                            <li><a href="http://nhstech.us/calendar/<?php echo $filename; ?>"
-                                   class="button special icon fa-download">Download File</a></li>
-                        </ul>
-                        </br></br>
+        $(document).ready(function () {
 
-                        And here are instructions for creating a new calendar in Gmail and importing the CSV file:
-                        <ul>
-                            <li>Open Gmail and access the calendar tab</li>
-                            <li>Click on the "gear" in the upper right corner and access "settings" </br> <img
-                                        src="images/settings.PNG" width="35%" border="0" alt=""></li>
-                            <li>Click on the "Calendars" tab </br> <img src="images/calendartab.PNG" width="50%"
-                                                                        border="0" alt=""></li>
-                            <li>Click on the "create new calendar" button </br> <img src="images/createnewcalendar.PNG"
-                                                                                     width="50%" border="0" alt=""></li>
-                            <li>Create a new calendar by entering a calendar name and clicking on "Create Calendar" (you
-                                can import the file directly into your main calendar <em>but</em> if you create a new
-                                calendar you can always delete it or share it without affecting your other events) </br>
-                                <img src="images/createnewcalendar2.PNG" width="50%" border="0" alt=""></li>
-                            <li>Return to calendar, then settings (under the gear), then calendar, and "import
-                                calendar" </br> <img src="images/import.PNG" width="50%" border="0" alt=""></li>
-                            <li>Select the CSV file that you downloaded, select your new calendar, and then click
-                                "Import" </br> <img src="images/import2.PNG" width="50%" border="0" alt=""></li>
-                        </ul>
-                    </div>
+            $('#calendar').fullCalendar({
+                defaultView: 'agendaWeek',
+                editable: false,
+                aspectRatio: 1.0,
+                height: 700,
+                weekends: false // will hide Saturdays and Sundays
+            })
+
+        });
+
+    </script>
+</head>
+<body>
+
+<div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+
+        <!-- Introduction -->
+        <section id="intro" class="main">
+            <div class="spotlight">
+                <div class="content">
+                    <header class="major">
+                        <h2>Thanks for using the Newtown High School Calendar Generator</h2>
+                        <p><?php echo $json?></p>
+                    </header>
+                    <ul class="actions">
+                        <li><a href="http://nhstech.us/calendar/<?php echo $filename; ?>"
+                               class="button special icon fa-download">Download File</a></li>
+                    </ul>
+                    <div id="calendar"></div>
+                    </br></br>
+
+                    And here are instructions for creating a new calendar in Gmail and importing the CSV file:
+                    <ul>
+                        <li>Open Gmail and access the calendar tab</li>
+                        <li>Click on the "gear" in the upper right corner and access "settings" </br> <img
+                                    src="images/settings.PNG" width="35%" border="0" alt=""></li>
+                        <li>Click on the "Calendars" tab </br> <img src="images/calendartab.PNG" width="50%"
+                                                                    border="0" alt=""></li>
+                        <li>Click on the "create new calendar" button </br> <img
+                                    src="images/createnewcalendar.PNG"
+                                    width="50%" border="0" alt=""></li>
+                        <li>Create a new calendar by entering a calendar name and clicking on "Create Calendar"
+                            (you
+                            can import the file directly into your main calendar <em>but</em> if you create a
+                            new
+                            calendar you can always delete it or share it without affecting your other
+                            events) </br>
+                            <img src="images/createnewcalendar2.PNG" width="50%" border="0" alt=""></li>
+                        <li>Return to calendar, then settings (under the gear), then calendar, and "import
+                            calendar" </br> <img src="images/import.PNG" width="50%" border="0" alt=""></li>
+                        <li>Select the CSV file that you downloaded, select your new calendar, and then click
+                            "Import" </br> <img src="images/import2.PNG" width="50%" border="0" alt=""></li>
+                    </ul>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
     </div>
-    <?
+</div>
+<?
 
 } else {
 
@@ -208,29 +250,36 @@ if (isset($_POST['submitschedule'])){
                     <header class="major">
                         <h2>Welcome to the Newtown High School Calendar Generator</h2>
                     </header>
-                    <p>This program will generate a CSV file (suitable for import to Google Calendar) that recognizes
+                    <p>This program will generate a CSV file (suitable for import to Google Calendar) that
+                        recognizes
                         Letter Day Designations, Half Days and even Finals.</br></br>
                         How to use it:
                     <ul>
                         <li>Be creative. Do it in pieces and establish a calendar for each course or section to be
                             shared with others.
                         </li>
-                        <li>In the "Start Date" field, enter the date you would like the calendar information to begin
+                        <li>In the "Start Date" field, enter the date you would like the calendar information to
+                            begin
                             on. Appropriate format is YYYY-MM-DD.
                         </li>
-                        <li>In the "End Date" field, enter the date you would like the calendar information to end on.
-                            Appropriate format is YYYY-MM-DD. (Perhaps you have semester courses and need to run this
+                        <li>In the "End Date" field, enter the date you would like the calendar information to end
+                            on.
+                            Appropriate format is YYYY-MM-DD. (Perhaps you have semester courses and need to run
+                            this
                             twice.)
                         </li>
                         <li>In the "Period # Class" field, enter the name of the course, the duty, or whatever other
                             "period regular" activity you have (do not include commas - commas will be replaced with
                             dashes).
                         </li>
-                        <li>Leave all of the Letter boxes checked if this event occurs on every letter day (don't worry
-                            about days that drop - the program knows which letter day it is). If an event occurs only on
+                        <li>Leave all of the Letter boxes checked if this event occurs on every letter day (don't
+                            worry
+                            about days that drop - the program knows which letter day it is). If an event occurs
+                            only on
                             specific Letter days (like science lab), just leave those boxes checked.
                         </li>
-                        <li>Click "Submit Schedule". Your CSV file will be created and you will see instructions on how
+                        <li>Click "Submit Schedule". Your CSV file will be created and you will see instructions on
+                            how
                             to set up your Google calendar
                         </li>
                     </ul>
@@ -243,7 +292,8 @@ if (isset($_POST['submitschedule'])){
         <section id="cta" class="main special">
             <form name="schedule" id="schedule" action=<?php echo $_SERVER['PHP_SELF'] ?> method="post">
                 <div class="row uniform">
-                    <div class="6u 12u$(small)">Start Date: <input type=text name='startdate' id='startdate' size=50%
+                    <div class="6u 12u$(small)">Start Date: <input type=text name='startdate' id='startdate'
+                                                                   size=50%
                                                                    value='2016-08-25' tabindex=1></div>
                     <div class="6u$ 12u$(small)">End Date: <input type=text name='enddate' id='enddate' size=50%
                                                                   value='2017-06-30' tabindex=2></div>
@@ -367,14 +417,6 @@ if (isset($_POST['submitschedule'])){
     </footer>
 
 </div>
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrollex.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/skel.min.js"></script>
-<script src="assets/js/util.js"></script>
-<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="assets/js/main.js"></script>
 
 </body>
 </html>
