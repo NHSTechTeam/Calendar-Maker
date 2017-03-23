@@ -240,7 +240,8 @@ mysql_select_db(CONF_DATABASE) or die("poop");
                     <header class="major">
                         <h2>Use Instructions</h2>
                     </header>
-                    <h3>Here are instructions for creating a new calendar in Google Calendar and importing the CSV file</h3>
+                    <h3>Here are instructions for creating a new calendar in Google Calendar and importing the CSV
+                        file</h3>
                     <ul>
                         <li>Open <a href="https://calendar.google.com">Google Calendar</a></li>
                         <li>Click on the "gear" in the upper right corner and access "settings" </br> <img

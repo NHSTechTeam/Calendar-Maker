@@ -23,4 +23,6 @@ assets/sass/* linguist-vendored
 assets/fonts/* linguist-vendored
 assets/js/* linguist-vendored
 assets/* linguist-vendored
-assets/css/main.css linguist-vendored=false
+assets/css/ie8.css linguist-vendored=false
+assets/css/ie9.css linguist-vendored=false
+# assets/css/main.css linguist-vendored=false
