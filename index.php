@@ -199,7 +199,7 @@ mysql_select_db(CONF_DATABASE) or die("poop");
 
 <div id="wrapper">
 
-    <header class="major">
+    <header id="header" class="alt">
         <h1>Thanks for using the Newtown High School Calendar Generator</h1>
     </header>
 
