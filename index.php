@@ -207,7 +207,7 @@ mysql_select_db(CONF_DATABASE) or die("poop");
     <nav id="nav">
         <ul>
             <li><a href="#download" class="active">Download</a></li>
-            <li><a="ref="#instructions">Instructions</a></li>
+            <li><a href="#instructions">Instructions</a></li>
         </ul>
     </nav>
 
