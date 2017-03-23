@@ -199,23 +199,37 @@ mysql_select_db(CONF_DATABASE) or die("poop");
 
 <div id="wrapper">
 
+    <!-- Nav -->
+    <nav id="nav">
+        <ul>
+            <li><a href="#download" class="active">Download</a></li>
+            <li><a href="#instructions">Instructions</a></li>
+        </ul>
+    </nav>
+
     <!-- Main -->
     <div id="main">
 
         <!-- Introduction -->
-        <section id="intro" class="main">
+        <section id="download" class="main">
             <div class="spotlight">
                 <div class="content">
                     <header class="major">
                         <h2>Thanks for using the Newtown High School Calendar Generator</h2>
                     </header>
+
                     <ul class="actions">
                         <li><a href="http://nhstech.us/calendar/<?php echo $filename; ?>"
                                class="button special icon fa-download">Download File</a></li>
                     </ul>
                     <div class="major" id="calendar"></div>
-                    </br></br>
 
+                </div>
+            </div>
+        </section>
+        <section id="instructions" class="main">
+            <div class="spotlight">
+                <div class="content">
                     And here are instructions for creating a new calendar in Gmail and importing the CSV file:
                     <ul>
                         <li>Open Gmail and access the calendar tab</li>
