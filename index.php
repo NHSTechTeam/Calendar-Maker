@@ -48,7 +48,13 @@ mysql_select_db(CONF_DATABASE) or die("poop");
     <link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
+    <link rel='stylesheet' href='assets/fullcalendar/fullcalendar.css'/>
+
     <!-- Scripts -->
+    <script src="assets/fullcalendar/lib/jquery.min.js"></script>
+    <script src='assets/fullcalendar/lib/moment.min.js'></script>
+    <script src='assets/fullcalendar/fullcalendar.js'></script>
+
     <script src="assets/js/jquery.scrollex.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
     <script src="assets/js/skel.min.js"></script>
@@ -57,10 +63,6 @@ mysql_select_db(CONF_DATABASE) or die("poop");
     <script src="assets/js/ie/respond.min.js"></script><![endif]-->
     <script src="assets/js/main.js"></script>
 
-    <script src="assets/fullcalendar/lib/jquery.min.js"></script>
-    <link rel='stylesheet' href='assets/fullcalendar/fullcalendar.css'/>
-    <script src='assets/fullcalendar/lib/moment.min.js'></script>
-    <script src='assets/fullcalendar/fullcalendar.js'></script>
     <script type="text/javascript">
         <!--
         function SetAllCheckBoxes(FormName, FieldName, CheckValue) {
