@@ -230,9 +230,10 @@ mysql_select_db(CONF_DATABASE) or die("poop");
         <section id="instructions" class="main">
             <div class="spotlight">
                 <div class="content">
-                    And here are instructions for creating a new calendar in Gmail and importing the CSV file:
+                    <h1>Use Instructions</h1>
+                    <h3>Here are instructions for creating a new calendar in Google Calendar and importing the CSV file</h3>
                     <ul>
-                        <li>Open Gmail and access the calendar tab</li>
+                        <li>Open <a href="https://calendar.google.com">Google Calendar</a></li>
                         <li>Click on the "gear" in the upper right corner and access "settings" </br> <img
                                     src="images/settings.PNG" width="35%" border="0" alt=""></li>
                         <li>Click on the "Calendars" tab </br> <img src="images/calendartab.PNG" width="50%"
