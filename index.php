@@ -154,6 +154,7 @@ mysql_select_db(CONF_DATABASE) or die("poop");
 
     ?>
 
+    <!--suppress JSUnresolvedVariable -->
     <script>
 
         <?php
