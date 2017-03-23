@@ -199,11 +199,15 @@ mysql_select_db(CONF_DATABASE) or die("poop");
 
 <div id="wrapper">
 
+    <header class="major">
+        <h1>Thanks for using the Newtown High School Calendar Generator</h1>
+    </header>
+
     <!-- Nav -->
     <nav id="nav">
         <ul>
             <li><a href="#download" class="active">Download</a></li>
-            <li><a href="#instructions">Instructions</a></li>
+            <li><a="ref="#instructions">Instructions</a></li>
         </ul>
     </nav>
 
@@ -215,7 +219,7 @@ mysql_select_db(CONF_DATABASE) or die("poop");
             <div class="spotlight">
                 <div class="content">
                     <header class="major">
-                        <h2>Thanks for using the Newtown High School Calendar Generator</h2>
+                        <h2>Download and View your new Calendar</h2>
                     </header>
 
                     <ul class="actions">
@@ -230,7 +234,9 @@ mysql_select_db(CONF_DATABASE) or die("poop");
         <section id="instructions" class="main">
             <div class="spotlight">
                 <div class="content">
-                    <h1>Use Instructions</h1>
+                    <header class="major">
+                        <h2>Use Instructions</h2>
+                    </header>
                     <h3>Here are instructions for creating a new calendar in Google Calendar and importing the CSV file</h3>
                     <ul>
                         <li>Open <a href="https://calendar.google.com">Google Calendar</a></li>
