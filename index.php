@@ -62,6 +62,7 @@ mysql_select_db(CONF_DATABASE) or die("poop");
     <!--[if lte IE 8]>
     <script src="assets/js/ie/respond.min.js"></script><![endif]-->
     <script src="assets/js/main.js"></script>
+    <link rel="stylesheet" href="assets/css/calendar-maker.css"/>
 
     <script type="text/javascript">
         <!--
