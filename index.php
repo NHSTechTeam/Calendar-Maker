@@ -354,14 +354,14 @@ mysql_select_db(CONF_DATABASE) or die("poop");
             <form name="schedule" id="schedule" action=<?php echo $_SERVER['PHP_SELF'] ?> method="post">
                 <div class="row uniform">
                     <div class="6u 12u$(small)">Start Date: <input
-                                data-uk-datepicker="{minDate:'2016-08-25', maxDate:'2017-06-30'}" type=text
+                                data-uk-datepicker="{minDate:'2016-08-29', maxDate:'2017-06-07'}" type=text
                                 name='startdate' id='startdate'
                                 size=50%
-                                value='2016-08-25' tabindex=1></div>
+                                value='2016-08-29' tabindex=1></div>
                     <div class="6u$ 12u$(small)">End Date: <input
-                                data-uk-datepicker="{minDate:'2016-08-25', maxDate:'2017-06-30'}" type=text
+                                data-uk-datepicker="{minDate:'2016-08-29', maxDate:'2017-06-07'}" type=text
                                 name='enddate' id='enddate' size=50%
-                                value='2017-06-30' tabindex=2></div>
+                                value='2017-06-07' tabindex=2></div>
                 </div>
                 </br>
                 <h2><strong>Period 1 Class:</strong></h2>
