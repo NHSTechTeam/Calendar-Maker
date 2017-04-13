@@ -43,17 +43,23 @@ mysql_select_db(CONF_DATABASE) or die("poop");
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <!--[if lte IE 8]>
     <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="assets/css/main.css"/>
+    <link rel="stylesheet" href="assets/css/uikit.almost-flat.css"/>
+    <link rel="stylesheet" href="assets/css/components/datepicker.almost-flat.min.css"/>
     <!--[if lte IE 9]>
     <link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
     <link rel='stylesheet' href='assets/fullcalendar/fullcalendar.css'/>
 
+    <link rel="stylesheet" href="assets/css/main.css"/>
+
     <!-- Scripts -->
     <script src="assets/fullcalendar/lib/jquery.min.js"></script>
     <script src='assets/fullcalendar/lib/moment.min.js'></script>
     <script src='assets/fullcalendar/fullcalendar.js'></script>
+
+    <script src="assets/js/uikit.min.js"></script>
+    <script src="assets/js/components/datepicker.js"></script>
 
     <script src="assets/js/jquery.scrollex.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
@@ -274,6 +280,8 @@ mysql_select_db(CONF_DATABASE) or die("poop");
 } else {
 
 ?>
+</head>
+<body>
 <!-- Wrapper -->
 <div id="wrapper">
 
@@ -304,7 +312,8 @@ mysql_select_db(CONF_DATABASE) or die("poop");
                     </header>
                     <p>This program will generate a CSV file (suitable for import to Google Calendar) that
                         recognizes
-                        Letter Day Designations, Half Days and even Finals.</br></br>
+                        Letter Day Designations, Half Days and even Finals.</p>
+                    <p>
                         How to use it:
                     <ul>
                         <li>Be creative. Do it in pieces and establish a calendar for each course or section to be
@@ -344,11 +353,15 @@ mysql_select_db(CONF_DATABASE) or die("poop");
         <section id="cta" class="main special">
             <form name="schedule" id="schedule" action=<?php echo $_SERVER['PHP_SELF'] ?> method="post">
                 <div class="row uniform">
-                    <div class="6u 12u$(small)">Start Date: <input type=text name='startdate' id='startdate'
-                                                                   size=50%
-                                                                   value='2016-08-25' tabindex=1></div>
-                    <div class="6u$ 12u$(small)">End Date: <input type=text name='enddate' id='enddate' size=50%
-                                                                  value='2017-06-30' tabindex=2></div>
+                    <div class="6u 12u$(small)">Start Date: <input
+                                data-uk-datepicker="{minDate:'2016-08-25', maxDate:'2017-06-30'}" type=text
+                                name='startdate' id='startdate'
+                                size=50%
+                                value='2016-08-25' tabindex=1></div>
+                    <div class="6u$ 12u$(small)">End Date: <input
+                                data-uk-datepicker="{minDate:'2016-08-25', maxDate:'2017-06-30'}" type=text
+                                name='enddate' id='enddate' size=50%
+                                value='2017-06-30' tabindex=2></div>
                 </div>
                 </br>
                 <h2><strong>Period 1 Class:</strong></h2>
@@ -464,7 +477,6 @@ mysql_select_db(CONF_DATABASE) or die("poop");
             </br>
             <a href="https://github.com/NHSTechTeam/Calendar-Maker" class="icon fa-github"><span
                         class="label">GitHub</span></a>
-            </ul>
         </p>
     </footer>
 
