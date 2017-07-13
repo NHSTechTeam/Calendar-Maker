@@ -476,7 +476,13 @@ mysql_select_db(CONF_DATABASE) or die("poop");
             CSS Template: <a href="https://html5up.net">HTML5 UP</a>
             </br>
             <a href="https://github.com/NHSTechTeam/Calendar-Maker" class="icon fa-github"><span
-                        class="label">GitHub</span></a>
+                        class="label">GitHub</span>
+                        </a><?php
+        $commitHash = trim(exec('git log --pretty="%h" -n1 HEAD'));
+        $commitDate = new \DateTime(trim(exec('git log -n1 --pretty=%ci HEAD')));
+        $commitDate->setTimezone(new \DateTimeZone('UTC'));
+        echo " | <a href=\"https://github.com/NHSTechTeam/Calendar-Maker/commits/" . $commitHash . "\">" . $commitHash . "</a> ";
+                         ?>
         </p>
     </footer>
 
