@@ -187,11 +187,11 @@ mysql_select_db(CONF_DATABASE) or die("poop");
             $('#calendar').fullCalendar({
                 defaultView: 'agendaWeek',
                 businessHours: {
-                    start: '07:45:00',
+                    start: '08:00:00',
                     end: '14:32:00',
                     dow: [1, 2, 3, 4, 5]
                 },
-                minTime: '07:30:00',
+                minTime: '07:45:00',
                 maxTime: '14:45:00',
                 editable: false,
                 aspectRatio: 1.0,
