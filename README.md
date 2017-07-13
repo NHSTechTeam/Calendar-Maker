@@ -15,6 +15,11 @@ All early dismissal days are simply the same as normal days, but marked with a `
 All Two Hour Delay days should be labeled in the format `Letter Day`TD
 - Examples: `ATD`, `BTD`, `CTD`, `DTD`, `ETD`, `FTD`, `GTD`, `HTD`.
 
+### Extended Advisory
+##### Type 0
+All Extended Advisory days should be labeled in the format EA`Letter Day`
+- Examples: `EAA`, `EAB`, `EAC`, `EAD`, `EAE`, `EAF`, `EAG`, `EAH`.
+
 ### PLC Days
 ##### Type 2
 All PLC days should be labeled in the format `Letter Day`PL
