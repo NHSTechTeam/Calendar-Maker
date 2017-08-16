@@ -9,43 +9,43 @@
   "orientation": "portrait",
   "icons": [
     {
-      "src": "favicon/android-icon-36x36.png",
+      "src": "images/favicon/36x36.gif",
       "sizes": "36x36",
-      "type": "image\/png",
+      "type": "image\/gif",
       "density": "0.75"
     },
     {
-      "src": "favicon/android-icon-48x48.png",
+      "src": "images/favicon/48x48.gif",
       "sizes": "48x48",
-      "type": "image\/png",
+      "type": "image\/gif",
       "density": "1.0"
     },
     {
-      "src": "favicon/android-icon-72x72.png",
+      "src": "images/favicon/72x72.gif",
       "sizes": "72x72",
-      "type": "image\/png",
+      "type": "image\/gif",
       "density": "1.5"
     },
     {
-      "src": "favicon/android-icon-96x96.png",
+      "src": "images/favicon/96x96.gif",
       "sizes": "96x96",
-      "type": "image\/png",
+      "type": "image\/gif",
       "density": "2.0"
     },
     {
-      "src": "favicon/android-icon-144x144.png",
+      "src": "images/favicon/144x144.gif",
       "sizes": "144x144",
-      "type": "image\/png",
+      "type": "image\/gif",
       "density": "3.0"
     },
     {
-      "src": "favicon/android-icon-192x192.png",
+      "src": "images/favicon/192x192.gif",
       "sizes": "192x192",
-      "type": "image\/png",
+      "type": "image\/gif",
       "density": "4.0"
     },
     {
-      "src": "favicon/512x512.gif",
+      "src": "images/favicon/512x512.gif",
       "sizes": "512x512",
       "type": "image\/gif",
       "density": "4.0"
