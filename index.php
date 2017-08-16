@@ -13,7 +13,7 @@ mysql_select_db(CONF_DATABASE) or die("poop");
 ?>
 
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
     <title> CSV Calendar Creator - Newtown High School </title>
     <meta name="Author" content="Devin Matte & Charles Dumais">
@@ -281,7 +281,7 @@ mysql_select_db(CONF_DATABASE) or die("poop");
 <div id="wrapper">
 
     <!-- Header -->
-    <header id="header" class="alt">
+    <header id="header">
         <span class="logo"><img src="images/logo.svg" width="10%" alt=""/></span>
         <h1>Welcome to the Newtown High School Calendar Generator</h1>
         <p>Maintained by NHS Technology Team</p>
