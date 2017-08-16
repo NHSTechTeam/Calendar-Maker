@@ -359,7 +359,7 @@ mysql_select_db(CONF_DATABASE) or die("poop");
                                 value='2018-06-12' tabindex=2></div>
                 </div>
                 </br>
-                <h2><strong>Period 1 Class:</strong></h2>
+                <label for="period1"><strong>Period 1 Class:</strong></label>
                 <input type=text name='period1' id='period1' placeholder="Period 1 Class" size=25 tabindex=3/></br>
                 <input type="checkbox" id="A-1" checked name="day1[]" value="A"> <label for="A-1">A</label>
                 <input type="checkbox" id="B-1" checked name="day1[]" value="B"> <label for="B-1">B</label>
@@ -370,7 +370,7 @@ mysql_select_db(CONF_DATABASE) or die("poop");
                 <input type="checkbox" id="G-1" checked name="day1[]" value="G"> <label for="G-1">G</label>
                 <input type="checkbox" id="H-1" checked name="day1[]" value="H"> <label for="H-1">H</label>
                 </br>
-                <h2><strong>Period 2 Class: </strong></h2>
+                <label for="period2"><strong>Period 2 Class: </strong></label>
                 <input type=text name='period2' id='period2' placeholder="Period 2 Class" size=25 tabindex=4></br>
                 <input type="checkbox" id="A-2" checked name="day2[]" value="A"> <label for="A-2">A</label>
                 <input type="checkbox" id="B-2" checked name="day2[]" value="B"> <label for="B-2">B</label>
