@@ -13,11 +13,6 @@ mysql_select_db(CONF_DATABASE) or die("poop");
 ?>
 
 <!DOCTYPE HTML>
-<!--
-	Stellar by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 <head>
     <title> CSV Calendar Creator - Newtown High School </title>
@@ -35,10 +30,10 @@ mysql_select_db(CONF_DATABASE) or die("poop");
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#3A7BFF">
     <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#3A7BFF">
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <!--[if lte IE 8]>
@@ -49,17 +44,17 @@ mysql_select_db(CONF_DATABASE) or die("poop");
     <link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
-    <link rel='stylesheet' href='assets/fullcalendar/fullcalendar.css'/>
+    <link rel='stylesheet' href='assets/fullcalendar/fullcalendar.min.css'/>
 
     <link rel="stylesheet" href="assets/css/main.css"/>
 
     <!-- Scripts -->
     <script src="assets/fullcalendar/lib/jquery.min.js"></script>
     <script src='assets/fullcalendar/lib/moment.min.js'></script>
-    <script src='assets/fullcalendar/fullcalendar.js'></script>
+    <script src='assets/fullcalendar/fullcalendar.min.js'></script>
 
     <script src="assets/js/uikit.min.js"></script>
-    <script src="assets/js/components/datepicker.js"></script>
+    <script src="assets/js/components/datepicker.min.js"></script>
 
     <script src="assets/js/jquery.scrollex.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
