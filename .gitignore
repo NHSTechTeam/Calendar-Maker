@@ -53,3 +53,4 @@ Temporary Items
 include/configuration.php
 exported/calendar-1*.csv
 !/images/favicon/browserconfig.xml
+node_modules/

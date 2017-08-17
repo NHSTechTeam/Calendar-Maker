@@ -1,0 +1,18 @@
+{
+  "name": "calendar-maker",
+  "version": "2.3.0",
+  "description": "A php web app meant to help students and faculty at NHS produce a semester/year long schedule for their google calendars that accounts for all nuances in NHS school schedules",
+  "main": "index.php",
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NHSTechTeam/Calendar-Maker.git"
+  },
+  "author": "Devin Matte <devinmatte@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NHSTechTeam/Calendar-Maker/issues"
+  },
+  "homepage": "http://calendar.nhstech.us"
+}

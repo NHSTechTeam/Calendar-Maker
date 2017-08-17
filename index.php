@@ -36,25 +36,24 @@ mysql_select_db(CONF_DATABASE) or die("poop");
     <meta name="theme-color" content="#3A7BFF">
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <!--[if lte IE 8]>
-    <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
+
     <link rel="stylesheet" href="assets/css/uikit.almost-flat.css"/>
     <link rel="stylesheet" href="assets/css/components/datepicker.almost-flat.min.css"/>
-    <!--[if lte IE 9]>
-    <link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
-    <!--[if lte IE 8]>
-    <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
     <link rel='stylesheet' href='assets/fullcalendar/fullcalendar.min.css'/>
-
     <link rel="stylesheet" href="assets/css/main.css"/>
+    <link rel="stylesheet" href="assets/css/calendar-maker.css"/>
 
     <!-- Scripts -->
     <script src="assets/fullcalendar/lib/jquery.min.js"></script>
     <script src='assets/fullcalendar/lib/moment.min.js'></script>
-    <script src='assets/fullcalendar/fullcalendar.min.js'></script>
 
+    <script src='assets/fullcalendar/fullcalendar.min.js'></script>
     <script src="assets/js/uikit.min.js"></script>
-    <script src="assets/js/components/datepicker.min.js"></script>
+    <script src="assets/js/components/datepicker.min.js" async></script>
 
     <script src="assets/js/jquery.scrollex.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
@@ -63,7 +62,6 @@ mysql_select_db(CONF_DATABASE) or die("poop");
     <!--[if lte IE 8]>
     <script src="assets/js/ie/respond.min.js"></script><![endif]-->
     <script src="assets/js/main.js"></script>
-    <link rel="stylesheet" href="assets/css/calendar-maker.css"/>
 
     <script type="text/javascript">
         <!--
@@ -359,7 +357,7 @@ mysql_select_db(CONF_DATABASE) or die("poop");
                                 value='2018-06-12' tabindex=2></div>
                 </div>
                 </br>
-                <label for="period1"><strong>Period 1 Class:</strong></label>
+                <h2><strong>Period 1 Class:</strong></h2>
                 <input type=text name='period1' id='period1' placeholder="Period 1 Class" size=25 tabindex=3/></br>
                 <input type="checkbox" id="A-1" checked name="day1[]" value="A"> <label for="A-1">A</label>
                 <input type="checkbox" id="B-1" checked name="day1[]" value="B"> <label for="B-1">B</label>
@@ -370,7 +368,7 @@ mysql_select_db(CONF_DATABASE) or die("poop");
                 <input type="checkbox" id="G-1" checked name="day1[]" value="G"> <label for="G-1">G</label>
                 <input type="checkbox" id="H-1" checked name="day1[]" value="H"> <label for="H-1">H</label>
                 </br>
-                <label for="period2"><strong>Period 2 Class: </strong></label>
+                <h2><strong>Period 2 Class: </strong></h2>
                 <input type=text name='period2' id='period2' placeholder="Period 2 Class" size=25 tabindex=4></br>
                 <input type="checkbox" id="A-2" checked name="day2[]" value="A"> <label for="A-2">A</label>
                 <input type="checkbox" id="B-2" checked name="day2[]" value="B"> <label for="B-2">B</label>
