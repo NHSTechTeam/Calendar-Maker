@@ -15,8 +15,14 @@ mysql_select_db(CONF_DATABASE) or die("poop");
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <title> CSV Calendar Creator - Newtown High School </title>
+    <title> NHS Calendar-Maker - Newtown High School </title>
     <meta name="Author" content="Devin Matte & Charles Dumais">
+    <meta name="msapplication-TileColor" content="#3A7BFF">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#3A7BFF">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
     <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
@@ -30,12 +36,8 @@ mysql_select_db(CONF_DATABASE) or die("poop");
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+
     <link rel="manifest" href="manifest.json">
-    <meta name="msapplication-TileColor" content="#3A7BFF">
-    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#3A7BFF">
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
