@@ -6,9 +6,14 @@ session_start();
 //include configuration and functions files
 include("include/configuration.php");
 
-//link to database
-$link = mysql_connect(CONF_LOCATION, CONF_ADMINID, CONF_ADMINPASS) or die("poop");
-mysql_select_db(CONF_DATABASE) or die("poop");
+$conn = new mysqli(CONF_LOCATION, CONF_ADMINID, CONF_ADMINPASS);
+
+/** Check connection */
+if ($conn->connect_error) {
+    die("poop");
+}
+
+$conn = new mysqli(CONF_LOCATION, CONF_ADMINID, CONF_ADMINPASS, CONF_DATABASE);
 
 ?>
 
@@ -92,41 +97,41 @@ mysql_select_db(CONF_DATABASE) or die("poop");
     $id = session_id();
     $hostname = gethostbyaddr($_SERVER['REMOTE_ADDR']);
     $scheduleraw = $_POST['period1'] . ":" . $_POST['period2'] . ":" . $_POST['period3'] . ":" . $_POST['period4'] . ":" . $_POST['period5'] . ":" . $_POST['period6'] . ":" . $_POST['period7'] . ":" . $_POST['period8'];
-    $scheduleraw = mysql_real_escape_string(strip_tags(trim($scheduleraw)));
+    $scheduleraw = mysqli_real_escape_string($conn, strip_tags(trim($scheduleraw)));
     $logquery = "INSERT into access_log values (NULL, DATE_ADD(NOW(), INTERVAL 2 HOUR), \"" . $id . "\",\"" . $ip . "\",\"" . $hostname . "\",\"" . $scheduleraw . "\")";
-    mysql_query($logquery);
+    $conn->query($logquery);
 
     //run through POST variable and get info from database
     //first get active dates
     $date_query = "select * from Days where Date between \"" . $_POST['startdate'] . "\" and \"" . $_POST['enddate'] . "\"";
-    $activedates = mysql_query($date_query);
+    $activedates = $conn->query($date_query);
 
     /*
 
     This is the only section that needs to be edited for the program to work. You simply need to list out all the special day IDs. So anything that isn't A,B,C,D...
 
     */
-    $special_days = array("AS", "BS", "CS", "DS", "ES", "FS", "GS", "HS", "S", "SS", "M1", "M2", "M3", "M4", "Y1", "Y2", "Y3", "Y4",
-        "EAA", "EAB", "EAC", "EAD", "EAE", "EAF", "EAG", "EAH", "APL", "BPL", "CPL", "DPL", "EPL", "FPL", "GPL", "HPL", "ATD", "HTD", "BTD", "DTD");
+    $special_days = ["AS", "BS", "CS", "DS", "ES", "FS", "GS", "HS", "S", "SS", "M1", "M2", "M3", "M4", "Y1", "Y2", "Y3", "Y4",
+        "EAA", "EAB", "EAC", "EAD", "EAE", "EAF", "EAG", "EAH", "APL", "BPL", "CPL", "DPL", "EPL", "FPL", "GPL", "HPL", "ATD", "HTD", "BTD", "DTD"];
 
     //Stop editing
     $export_text = "";
 
     $export_text = "Subject,Start Date,Start Time,End Date,End Time\r\n";
 
-    while ($single_date = mysql_fetch_assoc($activedates)) {
+    while ($single_date = $activedates->fetch_assoc()) {
         for ($i = 1; $i < 9; $i++) {
             $period = "period" . $i;
             $day = "day" . $i;
             if (isset($_POST[$period]) && (strlen($_POST[$period]) > 0)) {
-                $_POST[$period] = mysql_real_escape_string(strip_tags(trim($_POST[$period])));
+                $_POST[$period] = mysqli_real_escape_string($conn, strip_tags(trim($_POST[$period])));
                 $_POST[$period] = str_replace(",", "-", $_POST[$period]);
                 if (in_array($single_date['Day'], $special_days)) {
                     //if ($single_date['Day'] == "X"){
                     //get times from database
                     $specialget_query = "Select * from Bells where Day=\"" . $single_date['Day'] . "\" AND Type=\"" . $single_date['Type'] . "\" AND Period=\"" . $i . "\"";
-                    $specialget = mysql_query($specialget_query);
-                    $specialgetrow = mysql_fetch_array($specialget);
+                    $specialget = $conn->query($specialget_query);
+                    $specialgetrow = $specialget->fetch_array();
                     if (!is_null($specialgetrow['Start'])) {
                         $export_text .= $_POST[$period] . "," . $single_date['Date'] . "," . $specialgetrow['Start'] . "," . $single_date['Date'] . "," . $specialgetrow['End'] . "\r\n";
                     }
@@ -134,8 +139,8 @@ mysql_select_db(CONF_DATABASE) or die("poop");
                     for ($j = 0; $j < 10; $j++) {
                         if (isset($_POST[$day][$j]) && (strlen($_POST[$day][$j]) > 0) && ($_POST[$day][$j] == $single_date['Day'])) {
                             $specialget_query2 = "Select * from Bells where Type=\"" . $single_date['Type'] . "\" AND Period=\"" . $i . "\" AND Day=\"" . $_POST[$day][$j] . "\"";
-                            $specialget2 = mysql_query($specialget_query2);
-                            $specialgetrow2 = mysql_fetch_array($specialget2);
+                            $specialget2 = $conn->query($specialget_query2);
+                            $specialgetrow2 = $specialget2->fetch_array();
                             if (!is_null($specialgetrow2['Start'])) {
                                 $export_text .= $_POST[$period] . "," . $single_date['Date'] . "," . $specialgetrow2['Start'] . "," . $single_date['Date'] . "," . $specialgetrow2['End'] . "\r\n";
                             }
