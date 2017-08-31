@@ -10,7 +10,8 @@ $conn = new mysqli(CONF_LOCATION, CONF_ADMINID, CONF_ADMINPASS);
 
 /** Check connection */
 if ($conn->connect_error) {
-    die("poop");
+    header("HTTP/1.1 500 Internal Server Error");
+    die("There was an error connecting to the Server");
 }
 
 $conn = new mysqli(CONF_LOCATION, CONF_ADMINID, CONF_ADMINPASS, CONF_DATABASE);
@@ -88,7 +89,7 @@ $conn = new mysqli(CONF_LOCATION, CONF_ADMINID, CONF_ADMINPASS, CONF_DATABASE);
         }
         // -->
     </script>
-    <?
+    <?php
 
     if (isset($_POST['submitschedule'])){
     //let's record the access information
@@ -106,15 +107,8 @@ $conn = new mysqli(CONF_LOCATION, CONF_ADMINID, CONF_ADMINPASS, CONF_DATABASE);
     $date_query = "select * from Days where Date between \"" . $_POST['startdate'] . "\" and \"" . $_POST['enddate'] . "\"";
     $activedates = $conn->query($date_query);
 
-    /*
+    $special_days = ["S", "SS", "M1", "M2", "M3", "M4", "Y1", "Y2", "Y3", "Y4"];
 
-    This is the only section that needs to be edited for the program to work. You simply need to list out all the special day IDs. So anything that isn't A,B,C,D...
-
-    */
-    $special_days = ["AS", "BS", "CS", "DS", "ES", "FS", "GS", "HS", "S", "SS", "M1", "M2", "M3", "M4", "Y1", "Y2", "Y3", "Y4",
-        "EAA", "EAB", "EAC", "EAD", "EAE", "EAF", "EAG", "EAH", "APL", "BPL", "CPL", "DPL", "EPL", "FPL", "GPL", "HPL", "ATD", "HTD", "BTD", "DTD"];
-
-    //Stop editing
     $export_text = "";
 
     $export_text = "Subject,Start Date,Start Time,End Date,End Time\r\n";
@@ -127,9 +121,8 @@ $conn = new mysqli(CONF_LOCATION, CONF_ADMINID, CONF_ADMINPASS, CONF_DATABASE);
                 $_POST[$period] = mysqli_real_escape_string($conn, strip_tags(trim($_POST[$period])));
                 $_POST[$period] = str_replace(",", "-", $_POST[$period]);
                 if (in_array($single_date['Day'], $special_days)) {
-                    //if ($single_date['Day'] == "X"){
                     //get times from database
-                    $specialget_query = "Select * from Bells where Day=\"" . $single_date['Day'] . "\" AND Type=\"" . $single_date['Type'] . "\" AND Period=\"" . $i . "\"";
+                    $specialget_query = "Select * from Bells where Day='{$single_date['Day']}' AND Type='{$single_date['Type']}' AND Period='{$i}'";
                     $specialget = $conn->query($specialget_query);
                     $specialgetrow = $specialget->fetch_array();
                     if (!is_null($specialgetrow['Start'])) {
@@ -138,7 +131,7 @@ $conn = new mysqli(CONF_LOCATION, CONF_ADMINID, CONF_ADMINPASS, CONF_DATABASE);
                 } else {
                     for ($j = 0; $j < 10; $j++) {
                         if (isset($_POST[$day][$j]) && (strlen($_POST[$day][$j]) > 0) && ($_POST[$day][$j] == $single_date['Day'])) {
-                            $specialget_query2 = "Select * from Bells where Type=\"" . $single_date['Type'] . "\" AND Period=\"" . $i . "\" AND Day=\"" . $_POST[$day][$j] . "\"";
+                            $specialget_query2 = "Select * from Bells where Type='{$single_date['Type']}' AND Period='{$i}' AND Day='{$_POST[$day][$j]}'";
                             $specialget2 = $conn->query($specialget_query2);
                             $specialgetrow2 = $specialget2->fetch_array();
                             if (!is_null($specialgetrow2['Start'])) {
@@ -275,7 +268,7 @@ $conn = new mysqli(CONF_LOCATION, CONF_ADMINID, CONF_ADMINPASS, CONF_DATABASE);
         </section>
     </div>
 </div>
-<?
+<?php
 
 } else {
 
@@ -490,6 +483,6 @@ $conn = new mysqli(CONF_LOCATION, CONF_ADMINID, CONF_ADMINPASS, CONF_DATABASE);
 
 </body>
 </html>
-<?
+<?php
 }
 ?>
