@@ -359,7 +359,7 @@ $conn = new mysqli(CONF_LOCATION, CONF_ADMINID, CONF_ADMINPASS, CONF_DATABASE);
                                 data-uk-datepicker="{minDate:'2018-08-26', maxDate:'2019-06-10'}" type=text
                                 name='startdate' id='startdate'
                                 size=50%
-                                value='2017-08-27' tabindex=1></div>
+                                value='2018-08-27' tabindex=1></div>
                     <div class="6u$ 12u$(small)">End Date: <input
                                 data-uk-datepicker="{minDate:'2018-08-26', maxDate:'2019-06-10'}" type=text
                                 name='enddate' id='enddate' size=50%
