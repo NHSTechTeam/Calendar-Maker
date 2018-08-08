@@ -22,7 +22,7 @@ $conn = new mysqli(CONF_LOCATION, CONF_ADMINID, CONF_ADMINPASS, CONF_DATABASE);
 <html lang="en">
 <head>
     <title> NHS Calendar-Maker - Newtown High School </title>
-    <meta name="Author" content="Devin Matte & Charles Dumais">
+    <meta name="Author" content="Devin Matte">
     <meta name="msapplication-TileColor" content="#3A7BFF">
     <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#3A7BFF">
@@ -356,14 +356,14 @@ $conn = new mysqli(CONF_LOCATION, CONF_ADMINID, CONF_ADMINPASS, CONF_DATABASE);
             <form name="schedule" id="schedule" action=<?php echo $_SERVER['PHP_SELF'] ?> method="post">
                 <div class="row uniform">
                     <div class="6u 12u$(small)">Start Date: <input
-                                data-uk-datepicker="{minDate:'2017-08-27', maxDate:'2018-06-13'}" type=text
+                                data-uk-datepicker="{minDate:'2018-08-26', maxDate:'2019-06-10'}" type=text
                                 name='startdate' id='startdate'
                                 size=50%
-                                value='2017-08-28' tabindex=1></div>
+                                value='2017-08-27' tabindex=1></div>
                     <div class="6u$ 12u$(small)">End Date: <input
-                                data-uk-datepicker="{minDate:'2017-08-27', maxDate:'2018-06-13'}" type=text
+                                data-uk-datepicker="{minDate:'2018-08-26', maxDate:'2019-06-10'}" type=text
                                 name='enddate' id='enddate' size=50%
-                                value='2018-06-12' tabindex=2></div>
+                                value='2019-06-06' tabindex=2></div>
                 </div>
                 </br>
                 <h2><strong>Period 1 Class:</strong></h2>
@@ -462,7 +462,7 @@ $conn = new mysqli(CONF_LOCATION, CONF_ADMINID, CONF_ADMINPASS, CONF_DATABASE);
                 </br></br>
                 <input type=submit id='submitschedule' name='submitschedule' value='Submit Schedule' tabindex=10>
             </form>
-            <p>Currently Supporting Schedules for the 2017-2018 School Year</p>
+            <p>Currently Supporting Schedules for the 2018-2019 School Year</p>
         </section>
 
     </div>
