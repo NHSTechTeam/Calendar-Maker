@@ -116,7 +116,7 @@ $conn = new mysqli(CONF_LOCATION, CONF_ADMINID, CONF_ADMINPASS, CONF_DATABASE);
     $date_query = "select * from Days where Date between \"" . $_POST['startdate'] . "\" and \"" . $_POST['enddate'] . "\"";
     $activedates = $conn->query($date_query);
 
-    $special_days = ["S", "SS", "M1", "M2", "M3", "M4", "Y1", "Y2", "Y3", "Y4"];
+    $special_days = ["S", "SS", "SSS", "M1", "M2", "M3", "M4", "Y1", "Y2", "Y3", "Y4"];
 
     $export_text = "";
 
