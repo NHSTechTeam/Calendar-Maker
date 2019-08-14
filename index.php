@@ -235,7 +235,7 @@ $conn = new mysqli(CONF_LOCATION, CONF_ADMINID, CONF_ADMINPASS, CONF_DATABASE);
                     </header>
 
                     <ul class="actions">
-                        <li><a href="http://nhstech.us/calendar/<?php echo $filename; ?>"
+                        <li><a href="/<?php echo $filename; ?>"
                                class="button special icon fa-download">Download File</a></li>
                     </ul>
                     <div class="major" id="calendar"></div>
