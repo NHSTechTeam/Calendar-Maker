@@ -357,14 +357,14 @@ $conn = new mysqli(CONF_LOCATION, CONF_ADMINID, CONF_ADMINPASS, CONF_DATABASE);
             <form name="schedule" id="schedule" action=<?php echo $_SERVER['PHP_SELF'] ?> method="post">
                 <div class="row uniform">
                     <div class="6u 12u$(small)">Start Date: <input
-                                data-uk-datepicker="{minDate:'2021-08-20', maxDate:'2022-06-15'}" type=text
+                                data-uk-datepicker="{minDate:'2021-08-29', maxDate:'2022-06-10'}" type=text
                                 name='startdate' id='startdate'
                                 size=50%
-                                value='2019-08-21' tabindex=1></div>
+                                value='2021-08-29' tabindex=1></div>
                     <div class="6u$ 12u$(small)">End Date: <input
-                                data-uk-datepicker="{minDate:'2021-08-20', maxDate:'2022-06-15'}" type=text
+                                data-uk-datepicker="{minDate:'2021-08-29', maxDate:'2022-06-10'}" type=text
                                 name='enddate' id='enddate' size=50%
-                                value='2020-06-10' tabindex=2></div>
+                                value='2022-06-09' tabindex=2></div>
                 </div>
                 </br>
                 <h2><strong>Period 1 Class:</strong></h2>
