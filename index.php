@@ -291,7 +291,8 @@ $conn = new mysqli(CONF_LOCATION, CONF_ADMINID, CONF_ADMINPASS, CONF_DATABASE);
     <header id="header">
         <span class="logo"><img src="images/logo.svg" width="10%" alt=""/></span>
         <h1>Welcome to the Newtown High School Calendar Generator</h1>
-        <p>Maintained by NHS Technology Team</p>
+        <!-- Commented out until they take control again -->
+        <!-- <p>Maintained by NHS Technology Team</p> -->
     </header>
 
     <!-- Nav -->
@@ -356,12 +357,12 @@ $conn = new mysqli(CONF_LOCATION, CONF_ADMINID, CONF_ADMINPASS, CONF_DATABASE);
             <form name="schedule" id="schedule" action=<?php echo $_SERVER['PHP_SELF'] ?> method="post">
                 <div class="row uniform">
                     <div class="6u 12u$(small)">Start Date: <input
-                                data-uk-datepicker="{minDate:'2019-08-20', maxDate:'2020-06-15'}" type=text
+                                data-uk-datepicker="{minDate:'2021-08-20', maxDate:'2022-06-15'}" type=text
                                 name='startdate' id='startdate'
                                 size=50%
                                 value='2019-08-21' tabindex=1></div>
                     <div class="6u$ 12u$(small)">End Date: <input
-                                data-uk-datepicker="{minDate:'2019-08-20', maxDate:'2020-06-15'}" type=text
+                                data-uk-datepicker="{minDate:'2021-08-20', maxDate:'2022-06-15'}" type=text
                                 name='enddate' id='enddate' size=50%
                                 value='2020-06-10' tabindex=2></div>
                 </div>
@@ -462,7 +463,7 @@ $conn = new mysqli(CONF_LOCATION, CONF_ADMINID, CONF_ADMINPASS, CONF_DATABASE);
                 </br></br>
                 <input type=submit id='submitschedule' name='submitschedule' value='Submit Schedule' tabindex=10>
             </form>
-            <p>Currently Supporting Schedules for the 2019-2020 School Year</p>
+            <p>Currently Supporting Schedules for the 2021-2022 School Year</p>
         </section>
 
     </div>
