@@ -1,5 +1,4 @@
 # Calendar-Maker
-[![Build Status](https://travis-ci.org/NHSTechTeam/Calendar-Maker.svg?branch=master)](https://travis-ci.org/NHSTechTeam/Calendar-Maker)
 
 Newtown High School Calendar Maker
 

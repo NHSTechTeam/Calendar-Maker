@@ -71,13 +71,23 @@ $conn = new mysqli(CONF_LOCATION, CONF_ADMINID, CONF_ADMINPASS, CONF_DATABASE);
     <script src="assets/js/ie/respond.min.js"></script><![endif]-->
     <script src="assets/js/main.js"></script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-52049115-4"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-52049115-4');
+        (function(h,o,u,n,d) {
+            h=h[d]=h[d]||{q:[],onReady:function(c){h.q.push(c)}}
+            d=o.createElement(u);d.async=1;d.src=n
+            n=o.getElementsByTagName(u)[0];n.parentNode.insertBefore(d,n)
+        })(window,document,'script','https://www.datadoghq-browser-agent.com/datadog-rum-v3.js','DD_RUM')
+        DD_RUM.onReady(function() {
+            DD_RUM.init({
+            clientToken: 'pub856e9ffc2b02ecfa5ad8cf8d4c364b73',
+            applicationId: '56ac43b8-dc80-46e2-8377-760a21439e1d',
+            site: 'datadoghq.com',
+            service:'calendar-maker',
+            version: '2021-2022',
+            sampleRate: 100,
+            trackInteractions: true,
+            })
+        })
     </script>
 
     <script type="text/javascript">
