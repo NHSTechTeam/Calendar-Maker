@@ -2,6 +2,8 @@
 
 Newtown High School Calendar Maker
 
+**New Repo available at [devinmatte/NHS-Calendar-Maker](https://github.com/devinmatte/NHS-Calendar-Maker)**
+
 Spreadsheet Setup:
 --------
 
